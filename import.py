@@ -46,6 +46,7 @@ def insert_data(instance_id, database_id, table_id, batchsize, data_file, format
     numcols = len(collist)
     
     ifile  = open(data_file, "r")
+    ifile.next()
     reader = csv.reader(ifile,delimiter=',')
     alist = []
     irows = 0
@@ -59,7 +60,7 @@ def insert_data(instance_id, database_id, table_id, batchsize, data_file, format
                 if typelist[x] == 'bytes':
                 	row[x] = base64.b64encode(row[x])
                 if typelist[x] == 'array':
-                        row[x] = row[x].split(" ")
+                        row[x] = row[x].split(";")
         alist.append(row)
         irows = irows + 1
   		    		
