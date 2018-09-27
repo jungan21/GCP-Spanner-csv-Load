@@ -1,0 +1,8 @@
+0,BankNumber,string
+1,AccountNumber,string
+2,ShortName,string
+3,AccountOpenDate,date
+4,PassbookBalanceAmount,integer
+5,CreatedOn,timestamp
+6,SecurityCode,array
+7,LastWithdrawalDate,array

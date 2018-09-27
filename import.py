@@ -58,6 +58,8 @@ def insert_data(instance_id, database_id, table_id, batchsize, data_file, format
                 	row[x] = float(row[x])
                 if typelist[x] == 'bytes':
                 	row[x] = base64.b64encode(row[x])
+                if typelist[x] == 'array':
+                        row[x] = row[x].split(" ")
         alist.append(row)
         irows = irows + 1
   		    		
